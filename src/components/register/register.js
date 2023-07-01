@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { API_URL } from "../../constants";
 
 class Register extends Component {
   constructor(props) {
