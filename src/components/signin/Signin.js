@@ -24,7 +24,7 @@ class Signin extends Component {
 		
 		if( signinEmail && signinPassword){
 
-			fetch('https://still-brook-67027.herokuapp.com/signin',
+			fetch(`${API_URL}/signin`,
 			{
 				method: 'POST',
 				headers: {'Content-Type': 'application/json'},

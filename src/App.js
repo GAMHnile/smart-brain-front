@@ -9,6 +9,7 @@ import Particles from 'react-particles-js';
 import Signin from './components/signin/Signin';
 import Register from './components/register/register';
 
+const API_URL = process.env.REACT_APP_API_BASE_URL
 
 const initialState = { 
         input: '',
@@ -83,7 +84,7 @@ class App extends Component {
   onButtonSubmit =(event)=>{
     this.setState({imageUrl: this.state.input})
     //clarifai call on server
-    fetch('https://still-brook-67027.herokuapp.com/imagesurl', 
+    fetch(`${API_URL}/imagesurl`, 
         {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -91,7 +92,7 @@ class App extends Component {
         })
     .then(res => res.json())
     .then(response=>{ 
-        fetch('https://still-brook-67027.herokuapp.com/images', 
+        fetch(`${API_URL}/images`, 
         {
           method: 'PUT',
           headers: {'Content-Type': 'application/json'},
